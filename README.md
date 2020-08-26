@@ -1,7 +1,7 @@
  ## Project Name: iURL v1.0
-[![N|Solid](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png)](https://reactnative.dev/)
-[![N|Solid](https://cdn.freebiesupply.com/logos/large/2x/feathersjs-logo-black-and-white.png)](https://feathersjs.com/)
- 
+<!-- [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid) -->
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" data-canonical-src="https://reactnative.dev/" width="200" height="400" />
+
 - It is a URLs saving program for the Android and iOS platform
 - my first experience in react-native whith feathersjs
 
