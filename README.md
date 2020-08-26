@@ -1,15 +1,25 @@
  ## Project Name: iURL v1.0
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
  
+- It is a URLs saving program for the Android and iOS platform
+- my first experience in react-native whith feathersjs
 
 # #Initialise:
 	[ X ] Create UX Diagram 	
-	[  ] Create DateBase Schema
+	[ X ] Create DateBase Schema
 
 	[ X ] Create Repository on Git Server
 
-	[  ] Setup BackEnd Server / Server-Side
-	[  ] Setup React-Native / Client-Side
+	[ X ] Setup BackEnd Server / Server-Side
+	[ X ] Setup React-Native / Client-Side
+
+### UX Diagram:
+![Alt text](/assets/UXDiagram.jpeg?raw=true "UX Diagram")
+
+
+### DateBase Schema:
+![Alt text](/assets/DateBaseSchema.jpeg.jpeg?raw=true "DateBase Schema")
+
 
 # #Server-Side:	
     [  ] Set link to database	
