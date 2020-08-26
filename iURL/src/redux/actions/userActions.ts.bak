@@ -1,0 +1,70 @@
+// import {AsyncStorage} from 'react-native';
+// import axios from 'axios';
+import {Dispatch} from 'react';
+import {AsyncStorage} from 'react-native';
+
+// import {BASE_URL, BASE_URL2} from '../../utils';
+// import qs from 'qs';
+import app from '../../feathers-client';
+
+// Step One
+export interface UserModel {
+  FullName: String;
+  accessToken: String;
+  // Email: String;
+  error: String;
+}
+
+//  Step two
+export interface LoginAction {
+  readonly type: 'ON_LOGIN';
+  payload: UserModel;
+}
+
+export interface ErrorAction {
+  readonly type: 'ON_ERROR';
+  payload: any;
+}
+
+export type UserAction = LoginAction | ErrorAction;
+
+// dispatch actions
+
+// Post request func
+export const onLogin = (email: String, password: String) => {
+  return async (dispatch: Dispatch<UserAction>) => {
+    // try {
+    // console.log('email:' + email + '\n password:' + password);
+    // const response = await axios.post<UserModel>(
+    //   `${BASE_URL}login.php`,
+    //   qs.stringify({email: email, password: password}),
+    // );
+    // console.log(response.data);
+    // if (!response) {
+    //   dispatch({
+    //     type: 'ON_ERROR',
+    //     payload: 'Login issue with API',
+    //   });
+    // } else {
+    //   dispatch({
+    //     type: 'ON_LOGIN',
+    //     payload: response.data, // Frist Data for response, The second data for Data Array
+    //   });
+    // }
+
+    await app
+      .authenticate({strategy: 'local', email, password})
+      .then((res) => {
+        // console.log(AsyncStorage.getItem('auth'));
+      })
+      .catch((err) => {
+        console.log('LoginPage: API call failed: ', err);
+      });
+    // } catch (error) {
+    //   dispatch({
+    //     type: 'ON_ERROR',
+    //     payload: error,
+    //   });
+    // }
+  };
+};

@@ -35,18 +35,26 @@
 
 
 # #Client-Side:
-	[  ] Set Code structure & Src Folder	
-	[  ] Install Packages 
-		    —> Redux - react-redux - ......
+	[ X ] Set Code structure & Src Folder	
+	[ X ] Install Packages 
+			@feathersjs/feathers @feathersjs/socketio-client 
+			socket.io-client @react-navigation/native @react-navigation/stack 
+			react-native-reanimated react-native-gesture-handler 
+			react-native-screens react-native-safe-area-context 
+			@react-native-community/masked-view react-native-elements 
+			react-native-vector-icons redux react-redux redux-thunk
+			redux-devtools-extension
+
+
 
 	[  ] Pages Design
 	[  ] Set Pages Navigation
 
-	[  ] Init Feathersjs-Client
+	[ X ] Init Feathersjs-Client
 
-	[  ] Create Reducers files
-	[  ] Create Actions files
-	[  ] Create Redux Store
+	[ X ] Create Reducers files
+	[ X ] Create Actions files
+	[ X ] Create Redux Store
 	[  ] Link Pages with reducers
 
 # Client-Side (Process):
