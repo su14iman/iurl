@@ -1,7 +1,10 @@
  ## Project Name: iURL v1.0
 <!-- [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid) -->
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" href="https://reactnative.dev/" width="80" height="60" />
-  <img src="https://cdn.freebiesupply.com/logos/large/2x/feathersjs-logo-black-and-white.png" href="https://feathersjs.com/" width="60" height="60" />(https://nodesource.com/products/nsolid)
+ <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" href="https://reactnative.dev/" width="80" height="60" />
+  <img src="https://cdn.freebiesupply.com/logos/large/2x/feathersjs-logo-black-and-white.png" href="https://feathersjs.com/" width="60" height="60" /> -->
+
+  [![N|Solid](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png =80x60)](https://reactnative.dev/)
+[![N|Solid](https://cdn.freebiesupply.com/logos/large/2x/feathersjs-logo-black-and-white.png =60x60)](https://feathersjs.com/)
 
 - It is a URLs saving program for the Android and iOS platform
 - my first experience in react-native whith feathersjs
