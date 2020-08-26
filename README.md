@@ -3,8 +3,8 @@
  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" href="https://reactnative.dev/" width="80" height="60" />
   <img src="https://cdn.freebiesupply.com/logos/large/2x/feathersjs-logo-black-and-white.png" href="https://feathersjs.com/" width="60" height="60" /> -->
 
-  [![N|Solid](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png =80x60)](https://reactnative.dev/)
-[![N|Solid](https://cdn.freebiesupply.com/logos/large/2x/feathersjs-logo-black-and-white.png =60x60)](https://feathersjs.com/)
+[![N|Solid](https://i.ibb.co/h8HzfHq/rsz-1200px-react-iconsvg.png)](https://reactnative.dev/)
+[![N|Solid](https://i.ibb.co/1nbrK31/rsz-feathersjs-logo-black-and-white.png)](https://feathersjs.com/)
 
 - It is a URLs saving program for the Android and iOS platform
 - my first experience in react-native whith feathersjs
