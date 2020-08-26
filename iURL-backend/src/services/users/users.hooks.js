@@ -7,8 +7,13 @@ const {
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt') ],
-    get: [ authenticate('jwt') ],
+    find: [ authenticate('jwt'),
+      async context => {
+        context.params.query = {_id:context.params.user._id}; // load owend UserID
+      },
+      // context => console.log(context.params), 
+    ],
+    get: [ authenticate('jwt'),],
     create: [ hashPassword('password') ],
     update: [ hashPassword('password'),  authenticate('jwt') ],
     patch: [ hashPassword('password'),  authenticate('jwt') ],

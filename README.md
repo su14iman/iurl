@@ -22,11 +22,11 @@
 
 
 # #Server-Side:	
-    [  ] Set link to database	
-    [  ] Create new Service ( URL )
-	[  ] Create models
-	[  ] set Relationship models
-	[  ] set Hooks on Services
+    [ X ] Set link to database	
+    [ X ] Create new Service ( URL )
+	[ X ] Create models
+	[ - ] set Relationship models
+	[ X ] set Hooks on Services
 
 
 # #Client-Side:
