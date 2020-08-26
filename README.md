@@ -18,7 +18,7 @@
 
 
 ### DateBase Schema:
-![Alt text](/assets/DateBaseSchema.jpeg.jpeg?raw=true "DateBase Schema")
+![Alt text](/assets/DateBaseSchema.jpeg?raw=true "DateBase Schema")
 
 
 # #Server-Side:	
