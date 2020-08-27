@@ -48,7 +48,13 @@
 
 
 	[  ] Pages Design
-	[  ] Set Pages Navigation
+		[ X ] Login Page
+		[  ] SingUp Page
+		[  ] Home Page
+		[  ] AddLink Page
+		[  ] ViewLink Page
+
+	[ X ] Set Pages Navigation
 
 	[ X ] Init Feathersjs-Client
 

@@ -1,76 +1,98 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
-import {TextField} from '../components/TextField';
-import {Button} from '../components/Button';
+import {View, StatusBar} from 'react-native';
+// import {Button, FormInput, FormLabel} from 'react-native-elements';
+import {Button, Text, Input, Image} from 'react-native-elements';
 
-import {useSelector, useDispatch} from 'react-redux';
-import {ApplicationState, onLogin} from '../redux';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {
+  faLock,
+  faUser,
+  faSignInAlt,
+  faPlus,
+} from '@fortawesome/free-solid-svg-icons';
 
-export const Login = ({navigation}) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+import colors from '../utils/colors.js';
 
-  const dispatch = useDispatch();
-  const {user} = useSelector((state: ApplicationState) => state.userReducer);
-
-  const {accessToken} = user;
-
-  useEffect(() => {
-    // console.log('User Data:' + Token);
-    if (accessToken !== undefined) {
-      // navigate to Profile or Home page
-      // navigation.push('Home');
-    }
-  }, [accessToken, navigation, user]);
-
-  const onTapLogin = () => {
-    dispatch(onLogin(email, password));
-  };
-
+export const Login = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.navigation} />
-      <View style={styles.body}>
-        <View style={styles.loginView}>
-          <TextField placeholder="Email Id" onTextChange={setEmail} />
-          <TextField
-            placeholder="Password"
-            onTextChange={setPassword}
-            isSecure={true}
-          />
-          <Button title="Login" onTap={onTapLogin} />
+    <View
+      style={{
+        padding: 10,
+      }}>
+      <StatusBar barStyle="light-content" backgroundColor={colors.red} />
 
-          {accessToken !== undefined && (
-            // eslint-disable-next-line react-native/no-inline-styles
-            <Text style={{marginLeft: 20, marginRight: 20, color: 'red'}}>
-              {JSON.stringify(user.accessToken)}
-            </Text>
-          )}
-        </View>
+      <View
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: 15,
+          marginBottom: 5,
+        }}>
+        <Image
+          source={{
+            uri: 'https://icon-library.net/images/icon-url/icon-url-10.jpg',
+          }}
+          style={{width: 100, height: 100}}
+        />
       </View>
 
-      <View style={styles.footer} />
+      <Input
+        label="Email"
+        placeholder="Enter your Em@il"
+        autoFocus
+        keyboardType="email-address"
+        leftIcon={
+          <FontAwesomeIcon icon={faUser} size={20} color={colors.silver} />
+        }
+      />
+
+      <Input
+        label="Password"
+        placeholder="Enter your Password"
+        leftIcon={
+          <FontAwesomeIcon icon={faLock} size={20} color={colors.silver} />
+        }
+        secureTextEntry
+      />
+
+      <Text
+        style={{
+          color: colors.redH,
+          textAlign: 'center',
+          marginBottom: 8,
+          marginTop: -10,
+        }}>
+        {/* Passwords or Email its not match */}
+      </Text>
+
+      <Button
+        title="Login"
+        type="solid"
+        buttonStyle={{backgroundColor: colors.black, marginTop: 2}}
+        icon={
+          <FontAwesomeIcon
+            style={{marginLeft: 7}}
+            icon={faSignInAlt}
+            size={15}
+            color={colors.whith}
+          />
+        }
+        iconRight
+      />
+      <Button
+        title="Sign Up"
+        type="solid"
+        buttonStyle={{backgroundColor: colors.orang, marginTop: 8}}
+        icon={
+          <FontAwesomeIcon
+            style={{marginLeft: 7}}
+            icon={faPlus}
+            size={15}
+            color={colors.whith}
+          />
+        }
+        iconRight
+      />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  navigation: {
-    flex: 2,
-  },
-  body: {
-    flex: 9,
-  },
-  loginView: {
-    marginTop: 200,
-    marginLeft: 20,
-    marginRight: 20,
-    height: 400,
-  },
-  footer: {
-    flex: 1,
-  },
-});
