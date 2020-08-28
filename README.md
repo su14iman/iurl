@@ -53,8 +53,11 @@
 		[  ] Home Page
 		[  ] AddLink Page
 		[  ] ViewLink Page
+		[  ] Profile Page
 
-	[ X ] Set Pages Navigation
+	[  ] Set Pages Navigation
+		[ X ] Stack Navigator
+		[  ] Tap Navigator
 
 	[ X ] Init Feathersjs-Client
 
