@@ -7,11 +7,15 @@ const {
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt'),
+    find: [ 
+      authenticate('jwt'),
       async context => {
-        context.params.query = {_id:context.params.user._id}; // load owend UserID
+        await (context.params.query.email ? 
+          context.params.query = {email:context.params.query.email} :
+          context.params.query = {_id:context.params.user._id} );
+        //  check user if he have accessToken or he want new authentication
+        
       },
-      // context => console.log(context.params), 
     ],
     get: [ authenticate('jwt'),],
     create: [ hashPassword('password') ],
