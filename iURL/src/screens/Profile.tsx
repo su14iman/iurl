@@ -13,14 +13,14 @@ import {
 
 import colors from '../utils/colors.js';
 
-export const Home = () => {
+export const Profile = () => {
   return (
     <View
       style={{
         padding: 10,
       }}>
       <StatusBar barStyle="light-content" backgroundColor={colors.red} />
-      <Text>Hey Home</Text>
+      <Text>Hey Profile</Text>
     </View>
   );
 };

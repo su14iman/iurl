@@ -49,15 +49,15 @@
 
 	[  ] Pages Design
 		[ X ] Login Page
-		[  ] SingUp Page
+		[ X ] SingUp Page
 		[  ] Home Page
 		[  ] AddLink Page
-		[  ] ViewLink Page
 		[  ] Profile Page
+		[  ] ViewLink Page
 
-	[  ] Set Pages Navigation
+	[ X ] Set Pages Navigation
 		[ X ] Stack Navigator
-		[  ] Tap Navigator
+		[ X ] Tap Navigator
 
 	[ X ] Init Feathersjs-Client
 

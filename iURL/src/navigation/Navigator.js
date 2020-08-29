@@ -4,8 +4,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import colors from '../utils/colors';
+
 import {Login} from '../screens/Login';
-import {Home} from '../screens/Home';
+import {SingUp} from '../screens/SingUp';
+
+import TapNavi from './Tap';
+
+
 
 const Stack = createStackNavigator();
 
@@ -16,7 +21,7 @@ export const Navigator = () => {
     <NavigationContainer>
         
         <Stack.Navigator
-            initialRouteName="Login"
+            initialRouteName="TapNavi"
             screenOptions={{ 
                 headerStyle: { 
                     backgroundColor: colors.red
@@ -41,12 +46,22 @@ export const Navigator = () => {
         />
           
         <Stack.Screen
-            name="Home"
-            component={Home}
+            name="SingUp"
+            component={SingUp}
             options={{
                 title:'Home Page',
                 headerLeft: null,
             }}
+        />
+
+        <Stack.Screen
+            name="TapNavi"
+            component={TapNavi}
+            options={{
+                title: '',
+                headerLeft: null,
+            }}
+            
         />
 
 
