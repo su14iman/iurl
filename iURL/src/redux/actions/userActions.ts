@@ -31,40 +31,40 @@ export type UserAction = LoginAction | ErrorAction;
 // dispatch actions
 
 // Post request func
-export const onLogin = (email: String, password: String) => {
-  return async (dispatch: Dispatch<UserAction>) => {
-    // try {
-    // console.log('email:' + email + '\n password:' + password);
-    // const response = await axios.post<UserModel>(
-    //   `${BASE_URL}login.php`,
-    //   qs.stringify({email: email, password: password}),
-    // );
-    // console.log(response.data);
-    // if (!response) {
-    //   dispatch({
-    //     type: 'ON_ERROR',
-    //     payload: 'Login issue with API',
-    //   });
-    // } else {
-    //   dispatch({
-    //     type: 'ON_LOGIN',
-    //     payload: response.data, // Frist Data for response, The second data for Data Array
-    //   });
-    // }
+// export const onLogin = (email: String, password: String) => {
+//   return async (dispatch: Dispatch<UserAction>) => {
+//     // try {
+//     // console.log('email:' + email + '\n password:' + password);
+//     // const response = await axios.post<UserModel>(
+//     //   `${BASE_URL}login.php`,
+//     //   qs.stringify({email: email, password: password}),
+//     // );
+//     // console.log(response.data);
+//     // if (!response) {
+//     //   dispatch({
+//     //     type: 'ON_ERROR',
+//     //     payload: 'Login issue with API',
+//     //   });
+//     // } else {
+//     //   dispatch({
+//     //     type: 'ON_LOGIN',
+//     //     payload: response.data, // Frist Data for response, The second data for Data Array
+//     //   });
+//     // }
 
-    await app
-      .authenticate({strategy: 'local', email, password})
-      .then((res) => {
-        // console.log(AsyncStorage.getItem('auth'));
-      })
-      .catch((err) => {
-        console.log('LoginPage: API call failed: ', err);
-      });
-    // } catch (error) {
-    //   dispatch({
-    //     type: 'ON_ERROR',
-    //     payload: error,
-    //   });
-    // }
-  };
-};
+//     await app
+//       .authenticate({strategy: 'local', email, password})
+//       .then((res) => {
+//         // console.log(AsyncStorage.getItem('auth'));
+//       })
+//       .catch((err) => {
+//         console.log('LoginPage: API call failed: ', err);
+//       });
+//     // } catch (error) {
+//     //   dispatch({
+//     //     type: 'ON_ERROR',
+//     //     payload: error,
+//     //   });
+//     // }
+//   };
+// };
