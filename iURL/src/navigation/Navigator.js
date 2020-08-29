@@ -8,6 +8,8 @@ import colors from '../utils/colors';
 import {Login} from '../screens/Login';
 import {SingUp} from '../screens/SingUp';
 
+import {ViewLink} from '../screens/ViewLink';
+
 import TapNavi from './Tap';
 
 
@@ -21,7 +23,7 @@ export const Navigator = () => {
     <NavigationContainer>
         
         <Stack.Navigator
-            initialRouteName="TapNavi"
+            initialRouteName="ViewLink"
             screenOptions={{ 
                 headerStyle: { 
                     backgroundColor: colors.red
@@ -58,7 +60,17 @@ export const Navigator = () => {
             name="TapNavi"
             component={TapNavi}
             options={{
-                title: '',
+                title: 'Page Title',
+                headerLeft: null,
+            }}
+            
+        />
+
+        <Stack.Screen
+            name="ViewLink"
+            component={ViewLink}
+            options={{
+                title: 'Page Title',
                 headerLeft: null,
             }}
             

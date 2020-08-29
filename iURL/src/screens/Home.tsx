@@ -1,17 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import {View, StatusBar} from 'react-native';
-// import {Button, FormInput, FormLabel} from 'react-native-elements';
-import {Button, Text, Input, Image} from 'react-native-elements';
+import {Card, ListItem, Button, Icon, Text, Image} from 'react-native-elements';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faLock,
-  faUser,
-  faSignInAlt,
-  faPlus,
-} from '@fortawesome/free-solid-svg-icons';
+import {faLock} from '@fortawesome/free-solid-svg-icons';
 
 import colors from '../utils/colors.js';
+
+const users = [
+  {
+    name: 'brynn',
+  },
+  {
+    name: 'Mohmad',
+  },
+  {
+    name: 'Semo',
+  },
+  {
+    name: 'Ahmad',
+  },
+];
 
 export const Home = () => {
   return (
@@ -20,7 +29,16 @@ export const Home = () => {
         padding: 10,
       }}>
       <StatusBar barStyle="light-content" backgroundColor={colors.red} />
-      <Text>Hey Home</Text>
+
+      {users.map((u, i) => {
+        return (
+          <View key={i}>
+            <Card containerStyle={{backgroundColor: colors.orang}}>
+              <Text style={{color: colors.whith}}>{u.name}</Text>
+            </Card>
+          </View>
+        );
+      })}
     </View>
   );
 };

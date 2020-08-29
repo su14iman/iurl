@@ -47,13 +47,13 @@
 
 
 
-	[  ] Pages Design
+	[ X ] Pages Design
 		[ X ] Login Page
 		[ X ] SingUp Page
-		[  ] Home Page
-		[  ] AddLink Page
-		[  ] Profile Page
-		[  ] ViewLink Page
+		[ X ] Home Page
+		[ X ] AddLink Page
+		[ X ] Profile Page
+		[ X ] ViewLink Page
 
 	[ X ] Set Pages Navigation
 		[ X ] Stack Navigator
@@ -70,6 +70,8 @@
 	[  ] Setup auth
 	[  ] Setup SignUp	
 	[  ] Setup UserURLs	
+	[  ] Setup TapBar Label options props	
+	
 
 	
 

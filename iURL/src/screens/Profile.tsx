@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {View, StatusBar} from 'react-native';
 // import {Button, FormInput, FormLabel} from 'react-native-elements';
-import {Button, Text, Input, Image} from 'react-native-elements';
+import {Button, Text, ListItem, Card} from 'react-native-elements';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
-  faLock,
   faUser,
-  faSignInAlt,
-  faPlus,
+  faEnvelope,
+  faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 import colors from '../utils/colors.js';
@@ -20,7 +19,58 @@ export const Profile = () => {
         padding: 10,
       }}>
       <StatusBar barStyle="light-content" backgroundColor={colors.red} />
-      <Text>Hey Profile</Text>
+
+      <Card>
+        <Card.Title>You'r Profile</Card.Title>
+        <Card.Divider />
+
+        <ListItem bottomDivider>
+          <ListItem.Content>
+            <ListItem.Title>
+              <View>
+                <FontAwesomeIcon
+                  style={{marginRight: 7}}
+                  icon={faUser}
+                  size={15}
+                  color={colors.black}
+                />
+              </View>
+              <Text style={{marginLeft: 200}}>Sulaiman Sulaiman</Text>
+            </ListItem.Title>
+            <ListItem.Title>
+              <View>
+                <FontAwesomeIcon
+                  style={{marginRight: 7}}
+                  icon={faEnvelope}
+                  size={15}
+                  color={colors.black}
+                />
+              </View>
+              <Text style={{marginLeft: 200}}>semoo@dr.com</Text>
+            </ListItem.Title>
+          </ListItem.Content>
+        </ListItem>
+
+        <Button
+          buttonStyle={{
+            borderRadius: 0,
+            marginLeft: 0,
+            marginRight: 0,
+            marginBottom: 0,
+            backgroundColor: colors.leyla,
+          }}
+          title="Logout"
+          iconRight
+          icon={
+            <FontAwesomeIcon
+              style={{marginLeft: 7}}
+              icon={faSignOutAlt}
+              size={15}
+              color={colors.whith}
+            />
+          }
+        />
+      </Card>
     </View>
   );
 };
