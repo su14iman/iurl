@@ -64,7 +64,7 @@
 	[ X ] Create Reducers files
 	[ X ] Create Actions files
 	[ X ] Create Redux Store
-	[  ] Link Pages with reducers
+	[ X ] Link Pages with reducers
 
 # Client-Side (Process):
 	[  ] Setup auth
@@ -73,11 +73,11 @@
 	[  ] Setup props
 		[   ] TapBar Label  
 		[ X ] Login Page
-		[ X ] SingUp Page
-		[ X ] Home Page
-		[ X ] AddLink Page
+		[  ] SingUp Page
+		[  ] Home Page
+		[  ] AddLink Page
 		[ X ] Profile Page
-		[ X ] ViewLink Page
+		[  ] ViewLink Page
 	
 
 	

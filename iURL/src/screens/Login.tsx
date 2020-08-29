@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StatusBar} from 'react-native';
+import {View, StatusBar, AsyncStorage} from 'react-native';
 import {Button, Text, Input, Image} from 'react-native-elements';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
@@ -13,47 +13,42 @@ import colors from '../utils/colors.js';
 import {useSelector, useDispatch} from 'react-redux';
 import {ApplicationState, onLogin} from '../redux';
 
-export const Login = () => {
+export const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
-  const {profile, error} = useSelector(
+  const {user, error, LoginLoading, accessToken, login} = useSelector(
     (state: ApplicationState) => state.authReducer,
   );
 
-  const {accessToken} = profile;
-
   useEffect(() => {
-    // console.log('User Data:' + Token);
-    if (accessToken !== undefined) {
-      // navigation.push('Home');
+    if (login) {
+      navigation.push('TapNavi');
     }
-  }, [accessToken]);
+  });
 
   const onTapLogin = () => {
+    dispatch({
+      type: 'LOGIN_ATTEMPT',
+      payload: true,
+    });
+
     dispatch(onLogin(email, password));
   };
+
+  const onTapSignUp = () => {
+    dispatch(onLogin(email, password));
+    navigation.push('SingUp');
+  };
+
   return (
     <View
       style={{
         padding: 10,
       }}>
       <StatusBar barStyle="light-content" backgroundColor={colors.red} />
-      <View
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: 15,
-          marginBottom: 5,
-        }}>
-        <Image
-          source={{
-            uri: 'https://icon-library.net/images/icon-url/icon-url-10.jpg',
-          }}
-          style={{width: 100, height: 100}}
-        />
-      </View>
+
       <Input
         label="Email"
         placeholder="Enter your Em@il"
@@ -82,7 +77,7 @@ export const Login = () => {
             marginBottom: 8,
             marginTop: -10,
           }}>
-          {profile.error}
+          {error.message}
         </Text>
       )}
 
@@ -100,10 +95,12 @@ export const Login = () => {
           />
         }
         iconRight
+        loading={LoginLoading}
       />
       <Button
         title="Sign Up"
         type="solid"
+        onPress={onTapSignUp}
         buttonStyle={{backgroundColor: colors.orang, marginTop: 8}}
         icon={
           <FontAwesomeIcon

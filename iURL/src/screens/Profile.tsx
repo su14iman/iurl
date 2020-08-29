@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, StatusBar} from 'react-native';
+import {DrawerNavigationState} from '@react-navigation/routers';
 // import {Button, FormInput, FormLabel} from 'react-native-elements';
 import {Button, Text, ListItem, Card} from 'react-native-elements';
 
@@ -11,8 +12,21 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import colors from '../utils/colors.js';
+import {useSelector, useDispatch} from 'react-redux';
+import {ApplicationState, onLogin, onLogout} from '../redux';
 
 export const Profile = () => {
+  const dispatch = useDispatch();
+  const {user, error, LoginLoading, accessToken, login} = useSelector(
+    (state: ApplicationState) => state.authReducer,
+  );
+
+  const onTapLogout = () => {
+    dispatch(onLogout);
+    // navigation.push('Login');
+    console.log();
+  };
+
   return (
     <View
       style={{
@@ -60,6 +74,7 @@ export const Profile = () => {
             backgroundColor: colors.leyla,
           }}
           title="Logout"
+          onPress={onTapLogout}
           iconRight
           icon={
             <FontAwesomeIcon

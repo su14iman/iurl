@@ -49,25 +49,6 @@ export const SingUp = () => {
         secureTextEntry
       />
 
-      <Input
-        label="Re-password"
-        placeholder="Re-Password"
-        leftIcon={
-          <FontAwesomeIcon icon={faLock} size={20} color={colors.silver} />
-        }
-        secureTextEntry
-      />
-
-      <Text
-        style={{
-          color: colors.redH,
-          textAlign: 'center',
-          marginBottom: 8,
-          marginTop: -10,
-        }}>
-        {/* Passwords or Email its not match */}
-      </Text>
-
       <Button
         title="Sign Up"
         type="solid"

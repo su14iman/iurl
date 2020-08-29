@@ -8,6 +8,5 @@ export const SIGNUP_ATTEMPT = 'SIGNUP_ATTEMPT';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILED = 'SIGNUP_FAILED';
 // Logout
-export const LOGOUT_ATTEMPT = 'LOGOUT_ATTEMPT';
-export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
-export const LOGOUT_FAILED = 'LOGOUT_FAILED';
+
+export const LOGOUT = 'LOGOUT';

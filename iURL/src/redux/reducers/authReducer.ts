@@ -1,4 +1,4 @@
-import {AuthActions, ProfileModel} from '../actions/authActions';
+import {AuthActions} from '../actions/authActions';
 import {
     LOGIN_ATTEMPT,
     LOGIN_SUCCESS,
@@ -6,67 +6,70 @@ import {
     SIGNUP_ATTEMPT,
     SIGNUP_SUCCESS,
     SIGNUP_FAILED,
+    LOGOUT,
 } from '../types';
 
-type authState = {
-    profile: ProfileModel; //
+type authStateType = {
+    user: any; //
     error: string | undefined;
+    LoginLoading: boolean;
+    login: boolean;
+    accessToken:string;
   };
 
 const INITIAL_STATE = { 
-    loading: false,
+    LoginLoading: false,
     error: undefined,
     login: false,
-    profile:{} as ProfileModel,
+    accessToken:'',
+    user:{},
 };
 
 
 
-const AuthReducer = (state: authState = INITIAL_STATE, action:AuthActions)=> {
+const AuthReducer = (state: authStateType = INITIAL_STATE, action:AuthActions)=> {
     switch (action.type) {
        
         case LOGIN_ATTEMPT:
             return {
                 ...state,
-                loading: true,
+                LoginLoading: true,
              };
 
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                loading: false,
-                profile:action.payload,
+                LoginLoading: false,
+                login:true,
+                error:undefined,
+                user:action.payload.user,
+                accessToken:action.payload.accessToken,
+                
              };
 
         case LOGIN_FAILED:
             return {
                 ...state,
-                loading: true,
-                login: true,
-                ErrorMSG:action.payload,
+                LoginLoading: false,
+                login: false,
+                error:action.payload,
              };
 
 
 
-        case SIGNUP_ATTEMPT:
+
+
+        case LOGOUT:
             return {
                 ...state,
-                loading: true,
+                LoginLoading: false,
+                login:false,
+                error:undefined,
+                accessToken:'',
              };
 
-        case SIGNUP_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                profile:action.payload,
-             };
+        
 
-        case SIGNUP_FAILED:
-            return {
-                ...state,
-                loading: true,
-                ErrorMSG:action.payload,
-             };
 
         default: 
             return state;
