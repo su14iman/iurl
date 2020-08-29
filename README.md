@@ -70,7 +70,14 @@
 	[  ] Setup auth
 	[  ] Setup SignUp	
 	[  ] Setup UserURLs	
-	[  ] Setup TapBar Label options props	
+	[  ] Setup props
+		[   ] TapBar Label  
+		[ X ] Login Page
+		[ X ] SingUp Page
+		[ X ] Home Page
+		[ X ] AddLink Page
+		[ X ] Profile Page
+		[ X ] ViewLink Page
 	
 
 	

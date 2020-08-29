@@ -23,7 +23,7 @@ export const Navigator = () => {
     <NavigationContainer>
         
         <Stack.Navigator
-            initialRouteName="ViewLink"
+            initialRouteName="Login"
             screenOptions={{ 
                 headerStyle: { 
                     backgroundColor: colors.red
