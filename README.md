@@ -72,8 +72,8 @@
 	[ X ] Setup CheckAuth 
 			* reConnect with token and reload user data.
 	[  ] Setup UserURLs	
-	[  ] Setup props
-		[   ] TapBar Label  
+	[ - ] Setup props
+		[ X ] TapBar Label  
 		[ X ] Login Page
 		[ X ] SingUp Page
 		[ X ] CheckAuth Page

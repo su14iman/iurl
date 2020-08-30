@@ -3,16 +3,10 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import colors from '../utils/colors';
-
-import {Login} from '../screens/Login';
-import {SingUp} from '../screens/SingUp';
-
-import {ViewLink} from '../screens/ViewLink';
-
-import {CheckAuth} from '../screens/CheckAuth';
 
 import TapNavi from './Tap';
+import {Login,SingUp,ViewLink,CheckAuth} from '../screens';
+import colors from '../utils/colors';
 
 
 
@@ -68,11 +62,9 @@ export const Navigator = () => {
         <Stack.Screen
             name="TapNavi"
             component={TapNavi}
-            options={{
-                title: 'Page Title',
+            options={({ route }) => ({
                 headerLeft: null,
-            }}
-            
+              })}
         />
 
         <Stack.Screen

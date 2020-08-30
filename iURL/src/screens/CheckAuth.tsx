@@ -43,7 +43,7 @@ export const CheckAuth = ({navigation}: any) => {
               });
             });
         }
-        console.log(token);
+        // console.log('Token: ' + token);
         // token == null ? navigation.push('Login') : navigation.push('TapNavi');
       })
       .catch((err) => {

@@ -14,7 +14,6 @@ type authStateType = {
     error: string | undefined;
     loadingState: boolean;
     login: boolean;
-    isLogin: boolean;
   };
 
 const INITIAL_STATE = { 
@@ -22,7 +21,6 @@ const INITIAL_STATE = {
     error: undefined,
     login: false,
     user:{},
-    isLogin:false,
 };
 
 

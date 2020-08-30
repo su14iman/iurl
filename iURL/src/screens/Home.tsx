@@ -1,9 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {View, StatusBar} from 'react-native';
 import {Card, ListItem, Button, Icon, Text, Image} from 'react-native-elements';
-
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faLock} from '@fortawesome/free-solid-svg-icons';
 
 import colors from '../utils/colors.js';
 
@@ -11,18 +8,9 @@ const users = [
   {
     name: 'brynn',
   },
-  {
-    name: 'Mohmad',
-  },
-  {
-    name: 'Semo',
-  },
-  {
-    name: 'Ahmad',
-  },
 ];
 
-export const Home = () => {
+export const Home = ({route, navigation}: any) => {
   return (
     <View
       style={{

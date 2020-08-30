@@ -13,7 +13,9 @@ import colors from '../utils/colors.js';
 import {useSelector, useDispatch} from 'react-redux';
 import {ApplicationState, onLogin} from '../redux';
 
-export const Login = ({navigation}: any) => {
+export const Login = ({route, navigation}: any) => {
+  // setParams({name: "Brent's Profile"});
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,11 +23,14 @@ export const Login = ({navigation}: any) => {
   const {user, error, loadingState, login} = useSelector(
     (state: ApplicationState) => state.authReducer,
   );
+  // const HeaderTitle = useState(route.params.title);
 
   useEffect(() => {
     if (login) {
       navigation.push('TapNavi');
     }
+
+    // console.log(HeaderTitle);
   });
 
   const onTapLogin = () => {

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {View, StatusBar} from 'react-native';
 import {DrawerNavigationState} from '@react-navigation/routers';
 import {Button, Text, ListItem, Card} from 'react-native-elements';
@@ -12,7 +12,7 @@ import {
 
 import colors from '../utils/colors.js';
 import {useSelector, useDispatch} from 'react-redux';
-import {ApplicationState, onLogout, onCheck} from '../redux';
+import {ApplicationState, onLogout, onCheck, onChangeTitle} from '../redux';
 
 export const Profile = ({navigation}: any) => {
   const dispatch = useDispatch();
