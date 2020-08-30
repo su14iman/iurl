@@ -69,11 +69,14 @@
 # Client-Side (Process):
 	[ X ] Setup auth
 	[ X ] Setup SignUp	
+	[ X ] Setup CheckAuth 
+			* reConnect with token and reload user data.
 	[  ] Setup UserURLs	
 	[  ] Setup props
 		[   ] TapBar Label  
 		[ X ] Login Page
 		[ X ] SingUp Page
+		[ X ] CheckAuth Page
 		[  ] Home Page
 		[  ] AddLink Page
 		[ X ] Profile Page

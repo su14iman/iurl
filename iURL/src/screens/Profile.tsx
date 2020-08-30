@@ -12,7 +12,7 @@ import {
 
 import colors from '../utils/colors.js';
 import {useSelector, useDispatch} from 'react-redux';
-import {ApplicationState, onLogout} from '../redux';
+import {ApplicationState, onLogout, onCheck} from '../redux';
 
 export const Profile = ({navigation}: any) => {
   const dispatch = useDispatch();

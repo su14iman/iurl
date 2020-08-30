@@ -93,10 +93,10 @@ export const onSignup = (fullname:String,email: String, password: String) => {
         console.log(err);
       });
 
-    }).catch((err)=>{
+    }).catch((errr)=>{
       dispatch({
         type: 'SIGNUP_FAILED',
-        payload: err,
+        payload: errr,
       });
     });
   };
@@ -112,6 +112,18 @@ export const onLogout = () => {
 
   };
 };
+
+
+export const onCheck = () => {
+  return async (dispatch: Dispatch<AuthActions>) => {    
+    await app.authentication.getAccessToken().then((data)=>{
+      console.log(data)
+    });
+
+  };
+};
+
+
 
 
 

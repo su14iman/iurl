@@ -10,6 +10,8 @@ import {SingUp} from '../screens/SingUp';
 
 import {ViewLink} from '../screens/ViewLink';
 
+import {CheckAuth} from '../screens/CheckAuth';
+
 import TapNavi from './Tap';
 
 
@@ -23,7 +25,7 @@ export const Navigator = () => {
     <NavigationContainer>
         
         <Stack.Navigator
-            initialRouteName="Login"
+            initialRouteName="CheckAuth"
             screenOptions={{ 
                 headerStyle: { 
                     backgroundColor: colors.red
@@ -38,6 +40,13 @@ export const Navigator = () => {
             }}
         >
           
+        <Stack.Screen 
+            name="CheckAuth" 
+            component={CheckAuth} 
+            options={{
+                headerShown: false
+              }}
+        />
         <Stack.Screen 
             name="Login" 
             component={Login} 
