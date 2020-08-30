@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, StatusBar} from 'react-native';
 import {DrawerNavigationState} from '@react-navigation/routers';
-// import {Button, FormInput, FormLabel} from 'react-native-elements';
 import {Button, Text, ListItem, Card} from 'react-native-elements';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
@@ -13,18 +12,21 @@ import {
 
 import colors from '../utils/colors.js';
 import {useSelector, useDispatch} from 'react-redux';
-import {ApplicationState, onLogin, onLogout} from '../redux';
+import {ApplicationState, onLogout} from '../redux';
 
-export const Profile = () => {
+export const Profile = ({navigation}: any) => {
   const dispatch = useDispatch();
-  const {user, error, LoginLoading, accessToken, login} = useSelector(
+  const {user, error, loadingState, login} = useSelector(
     (state: ApplicationState) => state.authReducer,
   );
 
   const onTapLogout = () => {
-    dispatch(onLogout);
-    // navigation.push('Login');
-    console.log();
+    const promiseLogout = new Promise(function (resolve, reject) {
+      resolve(dispatch(onLogout()));
+    });
+    promiseLogout.then(() => {
+      navigation.push('Login');
+    });
   };
 
   return (
@@ -49,7 +51,7 @@ export const Profile = () => {
                   color={colors.black}
                 />
               </View>
-              <Text style={{marginLeft: 200}}>Sulaiman Sulaiman</Text>
+              <Text style={{marginLeft: 200}}>{user.fullname}</Text>
             </ListItem.Title>
             <ListItem.Title>
               <View>
@@ -60,7 +62,7 @@ export const Profile = () => {
                   color={colors.black}
                 />
               </View>
-              <Text style={{marginLeft: 200}}>semoo@dr.com</Text>
+              <Text style={{marginLeft: 200}}>{user.email}</Text>
             </ListItem.Title>
           </ListItem.Content>
         </ListItem>
@@ -75,6 +77,7 @@ export const Profile = () => {
           }}
           title="Logout"
           onPress={onTapLogout}
+          loading={loadingState}
           iconRight
           icon={
             <FontAwesomeIcon

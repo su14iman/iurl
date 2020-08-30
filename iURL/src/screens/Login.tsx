@@ -13,12 +13,12 @@ import colors from '../utils/colors.js';
 import {useSelector, useDispatch} from 'react-redux';
 import {ApplicationState, onLogin} from '../redux';
 
-export const Login = ({navigation}) => {
+export const Login = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
-  const {user, error, LoginLoading, accessToken, login} = useSelector(
+  const {user, error, loadingState, login} = useSelector(
     (state: ApplicationState) => state.authReducer,
   );
 
@@ -95,7 +95,7 @@ export const Login = ({navigation}) => {
           />
         }
         iconRight
-        loading={LoginLoading}
+        loading={loadingState}
       />
       <Button
         title="Sign Up"

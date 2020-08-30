@@ -42,7 +42,6 @@ export interface LOGIN_FAILED {
 
 export interface LOGOUT {
   readonly type: 'LOGOUT';
-  payload: boolean;
 }
 
 
@@ -50,7 +49,9 @@ export interface LOGOUT {
 
 
 
-export type AuthActions = LOGIN_ATTEMPT | LOGIN_SUCCESS | LOGIN_FAILED | LOGOUT;
+
+
+export type AuthActions = LOGIN_ATTEMPT | LOGIN_SUCCESS | LOGIN_FAILED | LOGOUT ;
 
 // dispatch actions
 
@@ -81,18 +82,20 @@ export const onSignup = (fullname:String,email: String, password: String) => {
   };
 };
 
-export const onLogout = (accessToken:String) => {
-  return async (dispatch: Dispatch<AuthActions>) => {
-    // await true;
-    
-    await AsyncStorage.removeItem('auth').then(()=>{
-      dispatch({
-        type: 'LOGOUT',
-        payload: true,
-      });
+export const onLogout = () => {
+  return async (dispatch: Dispatch<AuthActions>) => {    
+    await app.logout().then(()=>{
+      dispatch({type: 'LOGOUT'});
+    }).catch((err)=>{
+      console.log("Error: "+err);
     });
-    AsyncStorage.removeItem
 
   };
 };
+
+
+
+
+
+
 

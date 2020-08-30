@@ -10,18 +10,16 @@ import {
 } from '../types';
 
 type authStateType = {
-    user: any; //
+    user: any;
     error: string | undefined;
-    LoginLoading: boolean;
+    loadingState: boolean;
     login: boolean;
-    accessToken:string;
   };
 
 const INITIAL_STATE = { 
-    LoginLoading: false,
+    loadingState: false,
     error: undefined,
     login: false,
-    accessToken:'',
     user:{},
 };
 
@@ -33,24 +31,24 @@ const AuthReducer = (state: authStateType = INITIAL_STATE, action:AuthActions)=>
         case LOGIN_ATTEMPT:
             return {
                 ...state,
-                LoginLoading: true,
+                loadingState: true,
              };
 
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                LoginLoading: false,
+                loadingState: false,
                 login:true,
                 error:undefined,
                 user:action.payload.user,
-                accessToken:action.payload.accessToken,
+                // accessToken:action.payload.accessToken,
                 
              };
 
         case LOGIN_FAILED:
             return {
                 ...state,
-                LoginLoading: false,
+                loadingState: false,
                 login: false,
                 error:action.payload,
              };
@@ -62,10 +60,11 @@ const AuthReducer = (state: authStateType = INITIAL_STATE, action:AuthActions)=>
         case LOGOUT:
             return {
                 ...state,
-                LoginLoading: false,
                 login:false,
+                user:'',
+                loadingState: false,
                 error:undefined,
-                accessToken:'',
+                // accessToken:'',
              };
 
         
