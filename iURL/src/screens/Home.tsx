@@ -10,7 +10,7 @@ const users = [
   },
 ];
 
-export const Home = ({route, navigation}: any) => {
+export const Home = ({navigation}: any) => {
   return (
     <View
       style={{
