@@ -67,13 +67,13 @@
 	[ X ] Link Pages with reducers
 
 # Client-Side (Process):
-	[  ] Setup auth
-	[  ] Setup SignUp	
+	[ X ] Setup auth
+	[ X ] Setup SignUp	
 	[  ] Setup UserURLs	
 	[  ] Setup props
 		[   ] TapBar Label  
 		[ X ] Login Page
-		[  ] SingUp Page
+		[ X ] SingUp Page
 		[  ] Home Page
 		[  ] AddLink Page
 		[ X ] Profile Page

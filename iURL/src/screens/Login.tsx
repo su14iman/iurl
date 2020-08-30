@@ -37,8 +37,8 @@ export const Login = ({navigation}: any) => {
     dispatch(onLogin(email, password));
   };
 
-  const onTapSignUp = () => {
-    dispatch(onLogin(email, password));
+  const onTapToSignUp = () => {
+    // dispatch(onLogin(email, password));
     navigation.push('SingUp');
   };
 
@@ -100,7 +100,7 @@ export const Login = ({navigation}: any) => {
       <Button
         title="Sign Up"
         type="solid"
-        onPress={onTapSignUp}
+        onPress={onTapToSignUp}
         buttonStyle={{backgroundColor: colors.orang, marginTop: 8}}
         icon={
           <FontAwesomeIcon

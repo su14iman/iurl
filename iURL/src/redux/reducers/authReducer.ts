@@ -40,12 +40,18 @@ const AuthReducer = (state: authStateType = INITIAL_STATE, action:AuthActions)=>
                 loadingState: false,
                 login:true,
                 error:undefined,
-                user:action.payload.user,
-                // accessToken:action.payload.accessToken,
-                
+                user:action.payload.user,                
              };
 
         case LOGIN_FAILED:
+            return {
+                ...state,
+                loadingState: false,
+                login: false,
+                error:action.payload,
+             };
+
+        case SIGNUP_FAILED:
             return {
                 ...state,
                 loadingState: false,
@@ -64,7 +70,6 @@ const AuthReducer = (state: authStateType = INITIAL_STATE, action:AuthActions)=>
                 user:'',
                 loadingState: false,
                 error:undefined,
-                // accessToken:'',
              };
 
         

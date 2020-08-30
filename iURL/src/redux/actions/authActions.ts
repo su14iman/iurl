@@ -10,16 +10,6 @@ import {
     SIGNUP_FAILED,
     LOGOUT,
 } from '../types';
-import { AsyncStorage } from 'react-native';
-
-
-// export interface UserModel {
-//   FullName: String;
-//   accessToken: String;
-//   Email: String;
-//   error: String;
-// }
-
 
 export interface LOGIN_ATTEMPT {
   readonly type: 'LOGIN_ATTEMPT';
@@ -36,9 +26,21 @@ export interface LOGIN_FAILED {
   payload: any;
   
 }
+export interface SIGNUP_ATTEMPT {
+  readonly type: 'SIGNUP_ATTEMPT';
+  payload: any;
+}
 
+export interface SIGNUP_SUCCESS {
+  readonly type: 'SIGNUP_SUCCESS';
+  payload: any;
+}
 
-
+export interface SIGNUP_FAILED {
+  readonly type: 'SIGNUP_FAILED';
+  payload: any;
+  
+}
 
 export interface LOGOUT {
   readonly type: 'LOGOUT';
@@ -51,7 +53,7 @@ export interface LOGOUT {
 
 
 
-export type AuthActions = LOGIN_ATTEMPT | LOGIN_SUCCESS | LOGIN_FAILED | LOGOUT ;
+export type AuthActions = LOGIN_ATTEMPT | LOGIN_SUCCESS | LOGIN_FAILED | LOGOUT | SIGNUP_ATTEMPT | SIGNUP_SUCCESS |SIGNUP_FAILED ;
 
 // dispatch actions
 
@@ -78,7 +80,25 @@ export const onLogin = (email: String, password: String) => {
 
 export const onSignup = (fullname:String,email: String, password: String) => {
   return async (dispatch: Dispatch<AuthActions>) => {
-    await app.service('users').create({fullname,email, password})
+    await app.service('users').create({fullname,email, password}).then((data)=>{
+
+      app.authenticate({strategy: 'local', email, password})
+      .then((res) => {
+        dispatch({
+          type: 'LOGIN_SUCCESS',
+          payload: res,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    }).catch((err)=>{
+      dispatch({
+        type: 'SIGNUP_FAILED',
+        payload: err,
+      });
+    });
   };
 };
 
