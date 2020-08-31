@@ -29,8 +29,6 @@ export const Login = ({route, navigation}: any) => {
     if (login) {
       navigation.push('TapNavi');
     }
-
-    // console.log(HeaderTitle);
   });
 
   const onTapLogin = () => {

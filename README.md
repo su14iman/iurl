@@ -77,9 +77,9 @@
 		[ X ] Login Page
 		[ X ] SingUp Page
 		[ X ] CheckAuth Page
-		[  ] Home Page
-		[  ] AddLink Page
 		[ X ] Profile Page
+		[  ] Home Page
+		[ X ] AddLink Page
 		[  ] ViewLink Page
 	
 

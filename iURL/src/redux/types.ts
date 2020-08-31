@@ -12,4 +12,13 @@ export const SIGNUP_FAILED = 'SIGNUP_FAILED';
 export const LOGOUT = 'LOGOUT';
 
 
+// Link
+export const LINKS_ATTEMPT = 'LINKS_ATTEMPT';
+export const LINKS_SUCCESS = 'LINKS_SUCCESS';
+export const LINKS_FAILED = 'LINKS_FAILED';
+export const LINKS_READY = 'LINKS_READY';
+
+
+
+
 
