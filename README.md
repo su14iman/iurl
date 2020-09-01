@@ -71,14 +71,14 @@
 	[ X ] Setup SignUp	
 	[ X ] Setup CheckAuth 
 			* reConnect with token and reload user data.
-	[  ] Setup UserURLs	
+	[ X ] Setup UserURLs	
 	[ - ] Setup props
 		[ X ] TapBar Label  
 		[ X ] Login Page
 		[ X ] SingUp Page
 		[ X ] CheckAuth Page
 		[ X ] Profile Page
-		[  ] Home Page
+		[ X ] Home Page
 		[ X ] AddLink Page
 		[  ] ViewLink Page
 	
