@@ -5,8 +5,8 @@ const auth = require('@feathersjs/authentication-client');
 // import {AsyncStorage} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-
-const socket = io('http://192.168.1.104:3030', {
+// const socket = io('http://192.168.1.104:3030', {
+const socket = io('https://31867f324421.ngrok.io', {
   // Change to API_BASE_URL
   transports: ['websocket'],
   forceNew: true,
