@@ -6,7 +6,7 @@ import colors from '../utils/colors.js';
 import {useSelector, useDispatch} from 'react-redux';
 import {ApplicationState, onLoadLinkData} from '../redux';
 
-export const Home = () => {
+export const Home = ({navigation}: any) => {
   const dispatch = useDispatch();
   const {
     error,
@@ -20,8 +20,13 @@ export const Home = () => {
   const DATAB = data;
   // DATAB = data;
 
-  const onTapList = (name: String) => {
-    console.log(name);
+  const onTapList = (Title: String, URL: String) => {
+    const link = {Title: Title, URL: URL};
+    dispatch({
+      type: 'LINKS_OPEN',
+      payload: link,
+    });
+    navigation.push('ViewLink');
   };
 
   const onTapLoad = () => {
@@ -58,7 +63,7 @@ export const Home = () => {
             key={i}
             bottomDivider
             onPress={() => {
-              onTapList(l.URL);
+              onTapList(l.Title, l.URL);
             }}
             containerStyle={{
               backgroundColor: colors.orangH,

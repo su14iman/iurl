@@ -30,3 +30,5 @@ export const LINKS_LOAD_REFRESH = 'LINKS_LOAD_REFRESH';
 export const LINKS_LOAD_REFRESH_OUT = 'LINKS_LOAD_REFRESH_OUT';
 
 
+// Link - Load
+export const LINKS_OPEN = 'LINKS_OPEN';

@@ -9,6 +9,7 @@ import {
     LINKS_LOAD_FAILED,
     LINKS_LOAD_REFRESH,
     LINKS_LOAD_REFRESH_OUT,
+    LINKS_OPEN,
 } from '../types';
 
 type linkStateType = {
@@ -19,6 +20,7 @@ type linkStateType = {
     loadingState: boolean;
     added: boolean;
     refresh:boolean;
+    OpenLink:any;
   };
 
 const INITIAL_STATE = { 
@@ -29,6 +31,8 @@ const INITIAL_STATE = {
     dataLoading: false,
     dataDone: false,
     refresh:false,
+    OpenLink:{},
+
 };
 
 
@@ -96,6 +100,13 @@ const LinkReducer = (state: linkStateType = INITIAL_STATE, action:linkActions)=>
             return {
                 ...state,
                 refresh:false,
+
+            }
+        
+        case LINKS_OPEN:
+            return {
+                ...state,
+                OpenLink:action.payload,
 
             }
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StatusBar} from 'react-native';
+import {View, StatusBar, Linking} from 'react-native';
 // import {Button, FormInput, FormLabel} from 'react-native-elements';
 import {Button, Text, Input, Image, Card} from 'react-native-elements';
 
@@ -7,8 +7,24 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faLink} from '@fortawesome/free-solid-svg-icons';
 
 import colors from '../utils/colors.js';
+import {useSelector, useDispatch} from 'react-redux';
+import {ApplicationState} from '../redux';
 
-export const ViewLink = () => {
+export const ViewLink = ({navigation}: any) => {
+  const dispatch = useDispatch();
+  const {error, OpenLink} = useSelector(
+    (state: ApplicationState) => state.linkReducer,
+  );
+
+  useEffect(() => {
+    navigation.setOptions({headerTitle: OpenLink.Title}); // Set Title Stack
+  });
+
+  const onTapURL = async () => {
+    // console.log(OpenLink.URL);
+    await Linking.openURL(OpenLink.URL);
+  };
+
   return (
     <View
       style={{
@@ -18,7 +34,7 @@ export const ViewLink = () => {
 
       <Card>
         <Card.Title>
-          Name Link
+          {OpenLink.Title}
           <View>
             <FontAwesomeIcon
               style={{marginLeft: 7}}
@@ -40,6 +56,7 @@ export const ViewLink = () => {
             marginRight: 0,
             marginBottom: 0,
           }}
+          onPress={onTapURL}
           titleStyle={{
             color: colors.blue,
           }}

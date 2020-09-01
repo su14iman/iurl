@@ -11,6 +11,7 @@ import {
   LINKS_LOAD_FAILED,
   LINKS_LOAD_REFRESH_OUT,
   LINKS_LOAD_REFRESH,
+  LINKS_OPEN,
 } from '../types';
 
 export interface LINKS_ATTEMPT {
@@ -54,6 +55,11 @@ export interface LINKS_LOAD_FAILED {
   payload: any;
 }
 
+export interface LINKS_OPEN {
+  readonly type: 'LINKS_OPEN';
+  payload: any;
+}
+
 
 
 
@@ -65,7 +71,8 @@ export interface LINKS_LOAD_FAILED {
 
 export type linkActions = 
 LINKS_ATTEMPT | LINKS_SUCCESS |LINKS_FAILED | LINKS_READY 
-| LINKS_LOAD_ATTEMPT | LINKS_LOAD_SUCCESS | LINKS_LOAD_FAILED|LINKS_LOAD_REFRESH|LINKS_LOAD_REFRESH_OUT;
+| LINKS_LOAD_ATTEMPT | LINKS_LOAD_SUCCESS | LINKS_LOAD_FAILED|LINKS_LOAD_REFRESH|LINKS_LOAD_REFRESH_OUT
+| LINKS_OPEN;
 
 // dispatch actions
 

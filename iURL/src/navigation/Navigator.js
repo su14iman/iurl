@@ -7,6 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import TapNavi from './Tap';
 import {Login,SingUp,ViewLink,CheckAuth} from '../screens';
 import colors from '../utils/colors';
+import { LinkReducer } from '../redux/reducers/linkReducer';
 
 
 
@@ -70,11 +71,6 @@ export const Navigator = () => {
         <Stack.Screen
             name="ViewLink"
             component={ViewLink}
-            options={{
-                title: 'Page Title',
-                headerLeft: null,
-            }}
-            
         />
 
 
