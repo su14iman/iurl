@@ -1,5 +1,4 @@
  ## Project Name: iURL v1.0
- ### My frist app in react-native
 <!-- [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid) -->
  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" href="https://reactnative.dev/" width="80" height="60" />
   <img src="https://cdn.freebiesupply.com/logos/large/2x/feathersjs-logo-black-and-white.png" href="https://feathersjs.com/" width="60" height="60" /> -->
