@@ -19,7 +19,7 @@
 	[ X ] Setup React-Native / Client-Side
 
 ### UX Diagram:
-![Alt text](/assets/UXDiagram.jpeg?raw=true "UX Diagram")
+![Alt text](/assets/UXDiagram.jpg?raw=true "UX Diagram")
 
 
 ### DateBase Schema:
